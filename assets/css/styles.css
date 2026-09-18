@@ -185,55 +185,44 @@ img, svg { display: block; max-width: 100%; }
 
 .fine-print { font-size: 13px; color: var(--muted-2); }
 
-.browser-card {
+.hero-services {
   width: 100%;
-  max-width: 520px;
+  max-width: 420px;
   margin-left: auto;
-  background: var(--white);
-  border-radius: 20px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 30px 60px rgba(23, 21, 18, 0.15);
-}
-
-.browser-bar {
-  height: 40px;
-  background: var(--panel);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--line);
-}
-
-.browser-dot { width: 10px; height: 10px; border-radius: 50%; }
-
-.browser-body {
-  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-.block { border-radius: 12px; }
+.hero-service-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-shadow: 0 20px 40px rgba(23, 21, 18, 0.08);
+}
 
-.block-headline {
-  height: 120px;
-  background: var(--orange);
-  color: var(--white);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 18px;
+.hero-service-card-offset { margin-left: 48px; }
+
+.hero-service-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.block-row { display: flex; gap: 16px; }
-
-.block-flat { flex: 1; height: 96px; background: var(--panel); }
-
-.block-dark { height: 56px; background: var(--ink); }
+.hero-service-label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+}
 
 /* Contact */
 .contact {
@@ -403,7 +392,8 @@ img, svg { display: block; max-width: 100%; }
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { order: -1; }
-  .browser-card { max-width: 480px; margin: 0 auto; }
+  .hero-services { max-width: 420px; margin: 0 auto; }
+  .hero-service-card-offset { margin-left: 0; }
   .features-grid, .steps-grid { grid-template-columns: 1fr; }
 }
 
