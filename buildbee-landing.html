@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buildbee - Experiencias Digitales Únicas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'buildbee-orange': '#E68A00',
+                        'buildbee-amber': '#FF9A00',
+                        'buildbee-dark': '#121212',
+                        'buildbee-charcoal': '#1A1A1A',
+                        'buildbee-cream': '#F7F6F0',
+                        'buildbee-white': '#FCFCFA',
+                    },
+                    fontFamily: {
+                        'syne': ['Syne', 'sans-serif'],
+                        'jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'slide-up': 'slideUp 0.6s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F7F6F0;
+            color: #121212;
+            overflow-x: hidden;
+        }
+
+        .font-syne {
+            font-family: 'Syne', sans-serif;
+        }
+
+        /* Honeycomb Pattern Background */
+        .honeycomb-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E68A00' fill-opacity='0.05'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F7F6F0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #E68A00;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF9A00;
+        }
+
+        /* Button Hover Effects */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(230, 138, 0, 0.3);
+        }
+
+        /* Card Hover Effects */
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Wave Animation */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+
+        .wave-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        /* Bento Grid Layout */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .bento-large {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .bento-large {
+                grid-column: span 1;
+            }
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #F7F6F0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-bee {
+            width: 60px;
+            height: 60px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Form Input Styles */
+        .form-input {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #E68A00;
+            box-shadow: 0 0 0 3px rgba(230, 138, 0, 0.1);
+        }
+
+        /* Navigation Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        /* Hexagon Shape */
+        .hexagon {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #E68A00, #FF9A00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-element-delayed {
+            animation: float 6s ease-in-out infinite 2s;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <svg class="loader-bee" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="40" fill="#E68A00"/>
+            <ellipse cx="50" cy="50" rx="30" ry="20" fill="#FF9A00"/>
+        </svg>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-buildbee-cream/95 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <svg class="w-10 h-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#E68A00"/>
+                        <ellipse cx="50" cy="50" rx="35" ry="25" fill="#FF9A00"/>
+                        <circle cx="35" cy="40" r="5" fill="#121212"/>
+                        <circle cx="65" cy="40" r="5" fill="#121212"/>
+                        <path d="M45 60 Q50 65 55 60" stroke="#121212" stroke-width="3" fill="none"/>
+                    </svg>
+                    <span class="font-syne text-2xl font-bold">
+                        <span class="text-buildbee-charcoal">build</span><span class="gradient-text">bee</span>
+                    </span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicios" class="text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Servicios</a>
+                    <a href="#proyectos" class="text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Proyectos</a>
+                    <a href="#proceso" class="text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Proceso</a>
+                    <a href="#nosotros" class="text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Sobre Nosotros</a>
+                    <button class="btn-primary bg-buildbee-orange hover:bg-buildbee-amber text-white px-6 py-3 rounded-full font-semibold">
+                        Iniciar Proyecto
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed top-20 right-0 w-64 bg-buildbee-cream shadow-lg md:hidden" id="mobile-menu">
+            <div class="p-6 space-y-4">
+                <a href="#servicios" class="block text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Servicios</a>
+                <a href="#proyectos" class="block text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Proyectos</a>
+                <a href="#proceso" class="block text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Proceso</a>
+                <a href="#nosotros" class="block text-buildbee-charcoal hover:text-buildbee-orange transition-colors duration-300 font-medium">Sobre Nosotros</a>
+                <button class="w-full btn-primary bg-buildbee-orange hover:bg-buildbee-amber text-white px-6 py-3 rounded-full font-semibold">
+                    Iniciar Proyecto
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 honeycomb-bg overflow-hidden">
+        <!-- Floating Elements -->
+        <div class="absolute top-32 left-10 floating-element opacity-20">
+            <svg class="w-20 h-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,0 95,25 95,75 50,100 5,75 5,25" stroke="#E68A00" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+        
+        <div class="absolute bottom-32 right-10 floating-element-delayed opacity-20">
+            <svg class="w-16 h-16" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,0 95,25 95,75 50,100 5,75 5,25" stroke="#FF9A00" stroke-width="2" fill="none"/>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 animate-slide-up">
+                    <h1 class="font-syne text-5xl md:text-7xl font-bold leading-tight">
+                        Construimos experiencias digitales únicas,
+                        <span class="gradient-text block mt-2">pixel a pixel.</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 max-w-lg">
+                        Transformamos ideas en productos digitales excepcionales. Diseño UI/UX, desarrollo web y branding con identidad propia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="btn-primary bg-buildbee-orange hover:bg-buildbee-amber text-white px-8 py-4 rounded-full font-semibold text-lg">
+                            Comenzar Ahora
+                        </button>
+                        <button class="border-2 border-buildbee-charcoal text-buildbee-charcoal hover:bg-buildbee-charcoal hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300">
+                            Ver Proyectos
+                        </button>
+                    </div>
+                    
+                    <!-- Stats -->
+                    <div class="flex space-x-8 pt-8">
+                        <div>
+                            <div class="text-3xl font-bold text-buildbee-orange">50+</div>
+                            <div class="text-sm text-gray-600">Proyectos</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-buildbee-orange">98%</div>
+                            <div class="text-sm text-gray-600">Clientes Felices</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-bold text-buildbee-orange">5+</div>
+                            <div class="text-sm text-gray-600">Años Exp.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative hidden lg:block">
+                    <div class="relative w-full h-96">
+                        <!-- Central Bee Logo -->
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <svg class="w-48 h-48 animate-float" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="45" fill="#E68A00" opacity="0.2"/>
+                                <circle cx="50" cy="50" r="35" fill="#FF9A00" opacity="0.4"/>
+                                <ellipse cx="50" cy="50" rx="25" ry="18" fill="#E68A00"/>
+                                <circle cx="35" cy="45" r="4" fill="#121212"/>
+                                <circle cx="65" cy="45" r="4" fill="#121212"/>
+                                <path d="M45 58 Q50 63 55 58" stroke="#121212" stroke-width="2" fill="none"/>
+                                <path d="M25 35 Q15 25 20 15" stroke="#E68A00" stroke-width="3" fill="none"/>
+                                <path d="M75 35 Q85 25 80 15" stroke="#E68A00" stroke-width="3" fill="none"/>
+                            </svg>
+                        </div>
+                        
+                        <!-- Orbiting Elements -->
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2">
+                            <div class="w-16 h-16 bg-buildbee-orange rounded-2xl flex items-center justify-center shadow-lg animate-pulse-slow">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute bottom-0 left-0">
+                            <div class="w-14 h-14 bg-buildbee-charcoal rounded-full flex items-center justify-center shadow-lg animate-float">
+                                <svg class="w-7 h-7 text-buildbee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+                            <div class="w-12 h-12 bg-white border-2 border-buildbee-orange rounded-lg flex items-center justify-center shadow-lg animate-float-delayed">
+                                <svg class="w-6 h-6 text-buildbee-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#121212"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-20 bg-buildbee-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-syne text-4xl md:text-5xl font-bold mb-4">Nuestros Servicios</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Soluciones digitales completas para llevar tu marca al siguiente nivel</p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Service 1 - Large -->
+                <div class="service-card bento-large bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="card-icon w-16 h-16 bg-buildbee-orange rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Diseño Web & UI/UX</h3>
+                    <p class="text-gray-400 mb-6">Creamos interfaces intuitivas y visualmente impactantes que convierten visitantes en clientes.</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-buildbee-orange rounded-full mr-3"></span>Diseño Responsive</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-buildbee-orange rounded-full mr-3"></span>Prototipado Interactivo</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-buildbee-orange rounded-full mr-3"></span>Design Systems</li>
+                    </ul>
+                    <span class="inline-block mt-6 px-4 py-2 bg-buildbee-orange/20 text-buildbee-orange rounded-full text-sm font-semibold">Más Popular</span>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="card-icon w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Desarrollo Web</h3>
+                    <p class="text-gray-400 mb-6">Sitios web rápidos, seguros y escalables construidos con las últimas tecnologías.</p>
+                    <span class="inline-block mt-6 px-4 py-2 bg-purple-500/20 text-purple-400 rounded-full text-sm font-semibold">Full Stack</span>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="card-icon w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Branding</h3>
+                    <p class="text-gray-400 mb-6">Identidades de marca memorables que conectan emocionalmente con tu audiencia.</p>
+                    <span class="inline-block mt-6 px-4 py-2 bg-blue-500/20 text-blue-400 rounded-full text-sm font-semibold">Creative</span>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="card-icon w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">SEO & Marketing</h3>
+                    <p class="text-gray-400 mb-6">Optimización para motores de búsqueda y estrategias digitales que generan resultados.</p>
+                    <span class="inline-block mt-6 px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold">Growth</span>
+                </div>
+
+                <!-- Service 5 - Large -->
+                <div class="service-card bento-large bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <div class="card-icon w-16 h-16 bg-pink-500 rounded-2xl flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Apps Móviles</h3>
+                    <p class="text-gray-400 mb-6">Aplicaciones nativas e híbridas para iOS y Android con experiencias de usuario excepcionales.</p>
+                    <ul class="space-y-2 text-gray-300">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>iOS & Android</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>React Native / Flutter</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-3"></span>UI/UX Mobile First</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="proceso" class="py-20 bg-buildbee-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-syne text-4xl md:text-5xl font-bold mb-4 text-buildbee-charcoal">Cómo Trabajamos</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Un proceso colaborativo diseñado para obtener los mejores resultados</p>
+            </div>
+
+            <div class="relative">
+                <!-- Connection Line -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-buildbee-orange to-buildbee-amber transform -translate-y-1/2"></div>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Step 1 -->
+                    <div class="relative text-center group">
+                        <div class="w-20 h-20 mx-auto bg-white border-4 border-buildbee-orange rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-buildbee-orange">01</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-buildbee-charcoal">Descubrimiento</h3>
+                        <p class="text-gray-600">Analizamos tu negocio, objetivos y audiencia para definir la estrategia perfecta.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative text-center group">
+                        <div class="w-20 h-20 mx-auto bg-white border-4 border-buildbee-amber rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-buildbee-amber">02</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-buildbee-charcoal">Diseño</h3>
+                        <p class="text-gray-600">Creamos wireframes, mockups y prototipos interactivos para validar la experiencia.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative text-center group">
+                        <div class="w-20 h-20 mx-auto bg-white border-4 border-buildbee-orange rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-buildbee-orange">03</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-buildbee-charcoal">Desarrollo</h3>
+                        <p class="text-gray-600">Construimos tu producto digital con código limpio, moderno y optimizado.</p>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="relative text-center group">
+                        <div class="w-20 h-20 mx-auto bg-white border-4 border-buildbee-amber rounded-full flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-2xl font-bold text-buildbee-amber">04</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-buildbee-charcoal">Lanzamiento</h3>
+                        <p class="text-gray-600">Publicamos tu proyecto y brindamos soporte continuo para asegurar el éxito.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20 bg-buildbee-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="font-syne text-4xl md:text-5xl font-bold mb-6">¿Listo para empezar?</h2>
+                    <p class="text-xl text-gray-400 mb-8">Cuéntanos sobre tu proyecto y te contactaremos en menos de 24 horas.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-buildbee-orange rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg">hola@buildbee.com</span>
+                        </div>
+                        
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-buildbee-orange rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                            </div>
+                            <span class="text-lg">+34 123 456 789</span>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4 mt-8">
+                        <a href="#" class="w-12 h-12 bg-white/10 hover:bg-buildbee-orange rounded-full flex items-center justify-center transition-colors duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 hover:bg-buildbee-orange rounded-full flex items-center justify-center transition-colors duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 hover:bg-buildbee-orange rounded-full flex items-center justify-center transition-colors duration-300">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Nombre</label>
+                                <input type="text" class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Tipo de Proyecto</label>
+                            <select class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white">
+                                <option value="" class="bg-buildbee-charcoal">Selecciona una opción</option>
+                                <option value="web" class="bg-buildbee-charcoal">Diseño Web</option>
+                                <option value="app" class="bg-buildbee-charcoal">App Móvil</option>
+                                <option value="branding" class="bg-buildbee-charcoal">Branding</option>
+                                <option value="other" class="bg-buildbee-charcoal">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Mensaje</label>
+                            <textarea rows="4" class="form-input w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 resize-none" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary bg-buildbee-orange hover:bg-buildbee-amber text-white px-8 py-4 rounded-full font-semibold text-lg">
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-buildbee-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#E68A00"/>
+                        <ellipse cx="50" cy="50" rx="35" ry="25" fill="#FF9A00"/>
+                    </svg>
+                    <span class="font-syne text-xl font-bold">
+                        <span class="text-white">build</span><span class="text-buildbee-orange">bee</span>
+                    </span>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400">&copy; 2024 buildbee. Todos los derechos reservados.</p>
+                    <p class="text-gray-500 text-sm mt-1">Made with 🐝 buildbee</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Form submission handler
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(form);
+            
+            // Show success message (in real app, you'd send to backend)
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+            button.textContent = '¡Enviado!';
+            button.classList.add('bg-green-500');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-500');
+                form.reset();
+            }, 3000);
+        });
+
+        // Add parallax effect to floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const floatingElements = document.querySelectorAll('.floating-element');
+            
+            floatingElements.forEach((element, index) => {
+                const speed = (index + 1) * 0.1;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
