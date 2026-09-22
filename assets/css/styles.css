@@ -96,17 +96,7 @@ img, svg { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 
-.logo-word {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.logo-word-light { color: var(--cream); }
-
-.accent { color: var(--orange); }
+.logo-word-mark { display: block; }
 
 .nav-links {
   display: flex;
