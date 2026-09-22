@@ -134,6 +134,39 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 2px;
 }
 
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.lang-btn.is-active {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
 /* Hero */
 .hero { padding: 72px 0; }
 
@@ -539,6 +572,10 @@ img, svg { display: block; max-width: 100%; }
 
   .site-header.open .nav-actions {
     order: 2;
+    margin-left: auto;
+  }
+
+  .lang-switcher {
     margin-left: auto;
   }
 }
