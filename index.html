@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Work+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body data-page="index">
 
 <header class="site-header">
   <div class="container nav">
@@ -39,6 +39,11 @@
 
     <div class="nav-actions">
       <a href="#contacto" class="btn btn-primary">Contáctame</a>
+    </div>
+
+    <div class="lang-switcher" role="group" aria-label="Seleccionar idioma">
+      <button type="button" class="lang-btn is-active" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
     </div>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
