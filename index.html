@@ -13,8 +13,8 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>buildbee – Diseño web, mantenimiento y apps</title>
-    <meta name="description" content="buildbee: diseño páginas web, arreglo y doy mantenimiento a sitios existentes, y creo apps a partir...">
+    <title>BuildBeeTech — Desarrollo web, apps y automatización para tu negocio</title>
+    <meta name="description" content="BuildBeeTech: diseño páginas web, desarrollo apps a la medida, sitios bilingües y mantenimiento. Cotiza tu proyecto en segundos y recibe respuesta en menos de 24 horas.">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +24,8 @@
 <body data-page="index">
 <header class="site-header">
   <div class="container nav">
-    <a href="#inicio" class="logo" aria-label="buildbee — inicio">
-      <svg class="logo-word-mark" width="130" height="43" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="buildbee">
+    <a href="#inicio" class="logo" aria-label="BuildBeeTech — inicio">
+      <svg class="logo-word-mark" width="130" height="43" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BuildBeeTech">
         <defs><clipPath id="hex-nav-dot"><path d="M50,4 L89.8,27 L89.8,73 L50,96 L10.2,73 L10.2,27 Z"/></clipPath></defs>
         <text x="8" y="76" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="56" letter-spacing="-1" fill="#171512">buıld<tspan fill="#F2960C">bee</tspan></text>
         <g transform="translate(62,21.3) scale(0.22)">
@@ -41,6 +41,7 @@
 
     <nav class="nav-links" id="nav-links">
       <a href="#servicios">Servicios</a>
+      <a href="#cotizador">Cotizador</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#proceso">Proceso</a>
       <a href="#contacto">Contacto</a>
@@ -67,19 +68,24 @@
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <span class="badge"><span class="dot"></span>Diseño web · Mantenimiento · Apps</span>
-        <h1>Diseño, arreglo y convierto páginas web en apps que funcionan de verdad.</h1>
-        <p class="lead">Soy diseñador y desarrollador web. Te ayudo a construir tu sitio desde cero, resolver los problemas del que ya tienes, o convertirlo en una app para que tus clientes la lleven en el bolsillo.</p>
+        <span class="badge"><span class="dot"></span>⚡ Desarrollo Web, Apps &amp; Automatización</span>
+        <h1>Convertimos tus ideas en webs y apps que venden.</h1>
+        <p class="lead">BuildBeeTech diseña y desarrolla sitios web, aplicaciones a la medida y automatizaciones que hacen crecer tu negocio. Rápido, claro y sin sorpresas.</p>
+        <ul class="hero-chips">
+          <li>✓ Entrega en 1–3 semanas</li>
+          <li>✓ 100% responsive</li>
+          <li>✓ Soporte incluido</li>
+        </ul>
         <div class="hero-actions">
-          <a href="#contacto" class="btn btn-primary btn-lg">Escríbeme</a>
-          <a href="#servicios" class="btn btn-ghost btn-lg">Ver servicios</a>
+          <a href="#contacto" class="btn btn-primary btn-lg">Cotizar Proyecto</a>
+          <a href="#proyectos" class="btn btn-ghost btn-lg">Ver Portafolio →</a>
         </div>
         <p class="fine-print">Respondo en menos de 24 horas</p>
       </div>
       <div class="hero-visual">
         <div class="hero-panel">
           <span class="hero-panel-eyebrow">Mis servicios</span>
-          <h2 class="hero-panel-title">Todo lo que tu web necesita, en un solo lugar.</h2>
+          <h2 class="hero-panel-title">Todo lo que tu negocio digital necesita, en un solo lugar.</h2>
           <div class="hero-panel-list">
             <div class="hero-panel-item">
               <span class="hero-panel-icon">
@@ -111,8 +117,126 @@
               </div>
             </div>
           </div>
-          <a href="#servicios" class="hero-panel-link">Ver todos los servicios →</a>
+          <a href="#cotizador" class="hero-panel-link">Calcular mi precio estimado →</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COTIZADOR INTERACTIVO -->
+  <section class="estimator" id="cotizador">
+    <div class="container">
+      <div class="section-head">
+        <h2>Cotizador instantáneo</h2>
+        <p>Arma tu proyecto ideal y obtén un estimado de precio y tiempo de entrega en segundos. Sin formularios, sin esperas.</p>
+      </div>
+      <div class="estimator-card">
+        <div class="estimator-options">
+          <fieldset class="estimator-fieldset">
+            <legend>1 · ¿Qué necesitas? <small>(elige uno)</small></legend>
+            <div class="option-grid" role="radiogroup" aria-label="Tipo de proyecto">
+              <label class="option-card">
+                <input type="radio" name="est-type" value="landing" checked>
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Landing Page</strong>
+                  <small>Página de aterrizaje para vender o captar clientes.</small>
+                  <em class="option-meta">$350 · ~5 días</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="est-type" value="sitio">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Sitio Web Completo</strong>
+                  <small>Varias secciones, blog y presencia de marca.</small>
+                  <em class="option-meta">$650 · ~2 semanas</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="est-type" value="app">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>App Web a la Medida</strong>
+                  <small>Reservas, paneles, login y funciones propias.</small>
+                  <em class="option-meta">$1,200 · ~4 semanas</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="est-type" value="mantenimiento">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Mantenimiento / Arreglo</strong>
+                  <small>Actualizaciones, correcciones y soporte mensual.</small>
+                  <em class="option-meta">$150 · ~3 días</em>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="estimator-fieldset">
+            <legend>2 · Extras <small>(opcional)</small></legend>
+            <div class="option-grid option-grid-extras">
+              <label class="option-card">
+                <input type="checkbox" name="est-extra" value="bilingue">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Sitio bilingüe (ES/EN)</strong>
+                  <em class="option-meta">+$200 · +3 días</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="est-extra" value="seo">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>SEO básico</strong>
+                  <em class="option-meta">+$150 · +2 días</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="est-extra" value="ecommerce">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Tienda en línea</strong>
+                  <em class="option-meta">+$400 · +1 semana</em>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="checkbox" name="est-extra" value="reservas">
+                <span class="option-inner">
+                  <span class="option-check" aria-hidden="true"></span>
+                  <strong>Reservas en línea</strong>
+                  <em class="option-meta">+$300 · +4 días</em>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="estimator-fieldset">
+            <legend>3 · Urgencia</legend>
+            <div class="urgency-grid" role="radiogroup" aria-label="Urgencia del proyecto">
+              <label class="urgency-card">
+                <input type="radio" name="est-urgency" value="normal" checked>
+                <span class="option-inner"><strong>Normal</strong><small>Agendado según disponibilidad</small></span>
+              </label>
+              <label class="urgency-card">
+                <input type="radio" name="est-urgency" value="rapida">
+                <span class="option-inner"><strong>Rápida ⚡</strong><small>+25% · prioridad esta semana</small></span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <aside class="estimator-summary" aria-live="polite">
+          <span class="summary-eyebrow">Tu estimado</span>
+          <p class="summary-price" id="est-price">$350 – $420</p>
+          <p class="summary-delivery">⏱ <span id="est-days">≈ 5 días hábiles</span></p>
+          <ul class="summary-list" id="est-breakdown">
+            <li>Landing Page · $350 · 5 días</li>
+          </ul>
+          <p class="summary-note">Estimado referencial. El precio final se confirma tras una charla de 15 minutos.</p>
+          <a href="#contacto" class="btn btn-primary summary-cta" id="est-cta">Solicitar cotización exacta</a>
+        </aside>
       </div>
     </div>
   </section>
@@ -126,44 +250,80 @@
       </div>
       <div class="features-grid">
         <article class="card">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="3" width="16" height="16" rx="3" stroke="#F2960C" stroke-width="2"/><rect x="9" y="9" width="16" height="16" rx="3" stroke="#171512" stroke-width="2"/></svg>
+          <span class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="3" y="3" width="16" height="16" rx="3" stroke="#F2960C" stroke-width="2"/><rect x="9" y="9" width="16" height="16" rx="3" stroke="#171512" stroke-width="2"/></svg>
+          </span>
           <h3>Diseño de páginas web</h3>
-          <p>Sitios modernos, rápidos y adaptados a cualquier pantalla, diseñados a tu medida desde cero.</p>
+          <p>Sitios modernos pensados para convertir, no solo para verse bien.</p>
+          <ul class="card-list">
+            <li>Diseño a tu medida desde cero</li>
+            <li>Carga rápida en cualquier pantalla</li>
+            <li>Listos para publicar y compartir</li>
+          </ul>
         </article>
         <article class="card">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 4v6M14 18v6M4 14h6M18 14h6" stroke="#F2960C" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="4.5" stroke="#171512" stroke-width="2"/></svg>
+          <span class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 4v6M14 18v6M4 14h6M18 14h6" stroke="#F2960C" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="14" r="4.5" stroke="#171512" stroke-width="2"/></svg>
+          </span>
           <h3>Arreglo y mantenimiento</h3>
-          <p>¿Tu web tiene errores, está desactualizada o dejó de funcionar? La reviso, la arreglo y la dejo funcionando como nueva.</p>
+          <p>¿Tu web se rompió o quedó desactualizada? La dejo como nueva.</p>
+          <ul class="card-list">
+            <li>Diagnóstico rápido de errores</li>
+            <li>Actualizaciones de contenido y diseño</li>
+            <li>Planes mensuales de soporte</li>
+          </ul>
         </article>
         <article class="card">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="8" y="2" width="12" height="24" rx="3" stroke="#F2960C" stroke-width="2"/><line x1="12" y1="22" x2="16" y2="22" stroke="#171512" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="card-icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="8" y="2" width="12" height="24" rx="3" stroke="#F2960C" stroke-width="2"/><line x1="12" y1="22" x2="16" y2="22" stroke="#171512" stroke-width="2" stroke-linecap="round"/></svg>
+          </span>
           <h3>Apps a partir de tu web</h3>
-          <p>Convierto tu sitio en una app para que tus clientes tengan tus servicios a un toque de distancia, sin perder nada de lo que ya funciona.</p>
+          <p>Convierto tu sitio en una app que tus clientes llevan en el bolsillo.</p>
+          <ul class="card-list">
+            <li>Funciona en iOS y Android</li>
+            <li>Paneles de administración incluidos</li>
+            <li>Aprovecha lo que ya tienes</li>
+          </ul>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS -->
+  <!-- PORTAFOLIO -->
   <section class="portfolio" id="proyectos">
     <div class="container">
       <div class="section-head">
-        <h2>Un proyecto reciente</h2>
-        <p>Así se ve un producto real, construido de principio a fin.</p>
+        <h2>Casos de éxito</h2>
+        <p>Proyectos reales, construidos de principio a fin. Así se ve trabajar con BuildBeeTech.</p>
       </div>
-      <div class="portfolio-card">
-        <div class="portfolio-media">
-          <img src="assets/img/portfolio-pilatesconjime.png" alt="Captura de inicio del sitio Pilates con Jime" loading="lazy">
-        </div>
-        <div class="portfolio-body">
-          <span class="portfolio-tag">Sitio web · App · Panel de administración</span>
-          <h3>Pilates con Jime</h3>
-          <p>Sitio y aplicación para una instructora de pilates a domicilio: reserva de clases, calendario y un panel de administración para gestionar horarios y clientes.</p>
-          <div class="portfolio-links">
-            <a href="https://angelor256.github.io/PilatesconJime/" target="_blank" rel="noopener" class="btn btn-primary">Ver proyecto</a>
-            <a href="https://github.com/angelor256/PilatesconJime" target="_blank" rel="noopener" class="btn btn-ghost">Ver código</a>
+      <div class="portfolio-grid">
+        <article class="portfolio-tile">
+          <a class="portfolio-tile-media" href="https://angelor256.github.io/PilatesconJime/" target="_blank" rel="noopener">
+            <img src="assets/img/portfolio-pilatesconjime.png" alt="Captura de inicio del sitio Pilates con Jime" loading="lazy">
+          </a>
+          <div class="portfolio-tile-body">
+            <span class="portfolio-tag">Sitio web · App · Panel de administración</span>
+            <h3>Pilates con Jime</h3>
+            <p>Reserva de clases, calendario y gestión de clientes para una instructora de pilates a domicilio.</p>
+            <div class="portfolio-links">
+              <a href="https://angelor256.github.io/PilatesconJime/" target="_blank" rel="noopener" class="btn btn-primary">Ver proyecto</a>
+              <a href="https://github.com/angelor256/PilatesconJime" target="_blank" rel="noopener" class="btn btn-ghost">Ver código</a>
+            </div>
           </div>
-        </div>
+        </article>
+        <article class="portfolio-tile portfolio-tile-soon">
+          <div class="portfolio-tile-media portfolio-placeholder" aria-hidden="true">
+            <svg width="56" height="56" viewBox="0 0 28 28" fill="none"><rect x="3" y="5" width="22" height="18" rx="3" stroke="#F2960C" stroke-width="2"/><path d="M3 10h22" stroke="#171512" stroke-width="2"/><circle cx="7" cy="7.5" r="1" fill="#F2960C"/><circle cx="10.5" cy="7.5" r="1" fill="#171512"/></svg>
+          </div>
+          <div class="portfolio-tile-body">
+            <span class="portfolio-tag">Próximamente</span>
+            <h3>Tu proyecto aquí</h3>
+            <p>Soy el siguiente caso de éxito: cuéntame tu idea y la construimos juntos esta misma semana.</p>
+            <div class="portfolio-links">
+              <a href="#cotizador" class="btn btn-primary">Cotizar mi proyecto</a>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -200,7 +360,7 @@
     <div class="container about-inner">
       <span class="eyebrow">Sobre mí</span>
       <h2>Angelo Ramirez</h2>
-      <p>Soy diseñador y desarrollador web freelance. Me dedico a construir sitios y aplicaciones que resuelven problemas reales, como <a href="#proyectos">Pilates con Jime</a>, una app que ayuda a gestionar clases y reservas de principio a fin. Trabajo de cerca con cada cliente, desde la primera idea hasta que el proyecto está funcionando.</p>
+      <p>Fundador de BuildBeeTech. Soy diseñador y desarrollador web freelance. Me dedico a construir sitios y aplicaciones que resuelven problemas reales, como <a href="#proyectos">Pilates con Jime</a>, una app que ayuda a gestionar clases y reservas de principio a fin. Trabajo de cerca con cada cliente, desde la primera idea hasta que el proyecto está funcionando.</p>
     </div>
   </section>
 
@@ -223,8 +383,8 @@
 <footer class="site-footer">
   <div class="container footer-top">
     <div class="footer-brand">
-      <a href="#inicio" class="logo" aria-label="buildbee — inicio">
-        <svg class="logo-word-mark" width="120" height="40" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="buildbee">
+      <a href="#inicio" class="logo" aria-label="BuildBeeTech — inicio">
+        <svg class="logo-word-mark" width="120" height="40" viewBox="0 0 300 100" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BuildBeeTech">
           <defs><clipPath id="hex-footer-dot"><path d="M50,4 L89.8,27 L89.8,73 L50,96 L10.2,73 L10.2,27 Z"/></clipPath></defs>
           <text x="8" y="76" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="56" letter-spacing="-1" fill="#FAF6EC">buıld<tspan fill="#F2960C">bee</tspan></text>
           <g transform="translate(62,21.3) scale(0.22)">
@@ -237,7 +397,7 @@
           </g>
         </svg>
       </a>
-      <p>Diseño web, mantenimiento y apps para negocios que quieren funcionar sin problemas.</p>
+      <p>Desarrollo web, apps a la medida y soluciones digitales para negocios que quieren funcionar sin problemas.</p>
     </div>
     <div class="footer-columns">
       <div class="footer-col">
@@ -258,7 +418,7 @@
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© 2026 buildbee. Todos los derechos reservados.</span>
+    <span>© 2026 BuildBeeTech. Todos los derechos reservados.</span>
     <div class="footer-social">
       <a href="#">X</a>
       <a href="https://www.instagram.com/buildbeetech/" target="_blank" rel="noopener">Instagram</a>
