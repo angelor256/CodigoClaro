@@ -705,8 +705,6 @@ img, svg { display: block; max-width: 100%; }
   color: var(--ink);
 }
 
-.summary-delivery { font-size: 15px; font-weight: 600; color: var(--muted); }
-
 .summary-list {
   list-style: none;
   margin: 8px 0 0;
