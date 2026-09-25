@@ -8,79 +8,128 @@ const MENU_LABELS = {
 
 const PAGE_TRANSLATIONS = {
   index: [
-    { selector: 'title', es: 'buildbee — Diseño web, mantenimiento y apps', en: 'buildbee — Web design, maintenance and apps' },
-    { selector: 'meta[name="description"]', attr: 'content', es: 'buildbee: diseño páginas web, arreglo y doy mantenimiento a sitios existentes, y creo apps a partir de tu web. Escríbeme y hablamos de tu proyecto.', en: 'buildbee: web design, website fixes and maintenance, and app creation from your current website. Reach out and let’s talk about your project.' },
-    { selector: '.logo[aria-label]', all: true, attr: 'aria-label', es: 'buildbee — inicio', en: 'buildbee — home' },
-    { selector: '.nav-links a:nth-child(1)', es: 'Servicios', en: 'Services' },
-    { selector: '.nav-links a:nth-child(2)', es: 'Proyectos', en: 'Projects' },
-    { selector: '.nav-links a:nth-child(3)', es: 'Proceso', en: 'Process' },
-    { selector: '.nav-links a:nth-child(4)', es: 'Contacto', en: 'Contact' },
-    { selector: '.nav-actions .btn', es: 'Contáctame', en: 'Contact me' },
-    { selector: '.badge', es: 'Diseño web · Mantenimiento · Apps', en: 'Web design · Maintenance · Apps' },
-    { selector: '.hero-copy h1', es: 'Diseño, arreglo y convierto páginas web en apps que funcionan de verdad.', en: 'I design, fix, and turn websites into apps that truly work.' },
-    { selector: '.hero-copy .lead', es: 'Soy diseñador y desarrollador web. Te ayudo a construir tu sitio desde cero, resolver los problemas del que ya tienes, o convertirlo en una app para que tus clientes la lleven en el bolsillo.', en: 'I’m a web designer and developer. I help you build your site from scratch, fix what is not working on your current one, or turn it into an app your customers can carry in their pocket.' },
-    { selector: '.hero-actions .btn-primary', es: 'Escríbeme', en: 'Message me' },
-    { selector: '.hero-actions .btn-ghost', es: 'Ver servicios', en: 'View services' },
-    { selector: '.fine-print', es: 'Respondo en menos de 24 horas', en: 'I reply in under 24 hours' },
-    { selector: '.hero-panel-eyebrow', es: 'Mis servicios', en: 'My services' },
-    { selector: '.hero-panel-title', es: 'Todo lo que tu web necesita, en un solo lugar.', en: 'Everything your website needs, in one place.' },
-    { selector: '.hero-panel-item:nth-of-type(1) .hero-panel-item-title', es: 'Diseño web', en: 'Web design' },
-    { selector: '.hero-panel-item:nth-of-type(1) .hero-panel-item-desc', es: 'Sitios rápidos y a tu medida, listos para publicar.', en: 'Fast custom sites, ready to launch.' },
-    { selector: '.hero-panel-item:nth-of-type(2) .hero-panel-item-title', es: 'Mantenimiento', en: 'Maintenance' },
-    { selector: '.hero-panel-item:nth-of-type(2) .hero-panel-item-desc', es: 'Reviso y arreglo tu web si algo deja de funcionar.', en: 'I review and fix your site if something stops working.' },
-    { selector: '.hero-panel-item:nth-of-type(3) .hero-panel-item-title', es: 'Apps', en: 'Apps' },
-    { selector: '.hero-panel-item:nth-of-type(3) .hero-panel-item-desc', es: 'Convierto tu sitio en una app para tus clientes.', en: 'I turn your site into an app for your customers.' },
-    { selector: '.hero-panel-link', es: 'Ver todos los servicios →', en: 'See all services →' },
-    { selector: '#servicios .section-head h2', es: 'En qué puedo ayudarte', en: 'How I can help you' },
-    { selector: '#servicios .section-head p', es: 'Tres formas de trabajar juntos, según en qué punto esté tu proyecto.', en: 'Three ways to work together depending on where your project is right now.' },
-    { selector: '#servicios .card:nth-of-type(1) h3', es: 'Diseño de páginas web', en: 'Website design' },
-    { selector: '#servicios .card:nth-of-type(1) p', es: 'Sitios modernos, rápidos y adaptados a cualquier pantalla, diseñados a tu medida desde cero.', en: 'Modern, fast sites adapted to any screen, designed from scratch for your needs.' },
-    { selector: '#servicios .card:nth-of-type(2) h3', es: 'Arreglo y mantenimiento', en: 'Fixes and maintenance' },
-    { selector: '#servicios .card:nth-of-type(2) p', es: '¿Tu web tiene errores, está desactualizada o dejó de funcionar? La reviso, la arreglo y la dejo funcionando como nueva.', en: 'Does your website have errors, feel outdated, or stop working? I review it, fix it, and leave it running like new.' },
-    { selector: '#servicios .card:nth-of-type(3) h3', es: 'Apps a partir de tu web', en: 'Apps from your website' },
-    { selector: '#servicios .card:nth-of-type(3) p', es: 'Convierto tu sitio en una app para que tus clientes tengan tus servicios a un toque de distancia, sin perder nada de lo que ya funciona.', en: 'I turn your site into an app so your customers can access your services in one tap, without losing anything that already works.' },
-    { selector: '#proyectos .section-head h2', es: 'Un proyecto reciente', en: 'A recent project' },
-    { selector: '#proyectos .section-head p', es: 'Así se ve un producto real, construido de principio a fin.', en: 'This is what a real product built end-to-end looks like.' },
-    { selector: '.portfolio-media img', attr: 'alt', es: 'Captura de inicio del sitio Pilates con Jime', en: 'Homepage screenshot of the Pilates con Jime website' },
-    { selector: '.portfolio-tag', es: 'Sitio web · App · Panel de administración', en: 'Website · App · Admin panel' },
-    { selector: '.portfolio-body p', es: 'Sitio y aplicación para una instructora de pilates a domicilio: reserva de clases, calendario y un panel de administración para gestionar horarios y clientes.', en: 'Website and app for an in-home pilates instructor: class booking, calendar, and an admin panel to manage schedules and clients.' },
-    { selector: '.portfolio-links .btn-primary', es: 'Ver proyecto', en: 'View project' },
-    { selector: '.portfolio-links .btn-ghost', es: 'Ver código', en: 'View code' },
-    { selector: '#proceso .section-head h2', es: 'Cómo trabajamos juntos', en: 'How we work together' },
-    { selector: '#proceso .section-head p', es: 'Un proceso simple, sin letra pequeña, del primer mensaje a la entrega final.', en: 'A simple process, with no fine print, from first message to final delivery.' },
-    { selector: '.steps-grid .step:nth-child(1) h3', es: 'Cuéntame tu proyecto', en: 'Tell me about your project' },
-    { selector: '.steps-grid .step:nth-child(1) p', es: 'Escríbeme y hablamos sobre lo que necesitas: una web nueva, un arreglo o una app.', en: 'Send me a message and we’ll discuss what you need: a new site, a fix, or an app.' },
-    { selector: '.steps-grid .step:nth-child(2) h3', es: 'Preparo una propuesta', en: 'I prepare a proposal' },
-    { selector: '.steps-grid .step:nth-child(2) p', es: 'Te envío un plan claro con alcance y tiempos, sin sorpresas ni letra pequeña.', en: 'I send you a clear plan with scope and timeline, no surprises and no fine print.' },
-    { selector: '.steps-grid .step:nth-child(3) h3', es: 'Entrego y doy soporte', en: 'I deliver and support' },
-    { selector: '.steps-grid .step:nth-child(3) p', es: 'Recibes tu proyecto terminado, y sigo disponible si necesitas ajustes después.', en: 'You receive your finished project, and I remain available if you need adjustments later.' },
-    { selector: '.about .eyebrow', es: 'Sobre mí', en: 'About me' },
-    { selector: '.about-inner p', html: true, es: 'Soy diseñador y desarrollador web freelance. Me dedico a construir sitios y aplicaciones que resuelven problemas reales, como <a href="#proyectos">Pilates con Jime</a>, una app que ayuda a gestionar clases y reservas de principio a fin. Trabajo de cerca con cada cliente, desde la primera idea hasta que el proyecto está funcionando.', en: 'I’m a freelance web designer and developer. I build sites and apps that solve real problems, such as <a href="#proyectos">Pilates con Jime</a>, an app that helps manage classes and bookings end-to-end. I work closely with each client, from the first idea until the project is live.' },
-    { selector: '#contacto h2', es: 'Hablemos de tu proyecto', en: 'Let’s talk about your project' },
-    { selector: '#contacto p', es: 'Cuéntame qué necesitas y te responderé en menos de 24 horas.', en: 'Tell me what you need and I’ll reply in under 24 hours.' },
-    { selector: '.contact-label', es: 'Email', en: 'Email' },
-    { selector: '.footer-brand p', es: 'Diseño web, mantenimiento y apps para negocios que quieren funcionar sin problemas.', en: 'Web design, maintenance and apps for businesses that want to run without friction.' },
-    { selector: '.footer-col:nth-child(1) .footer-col-title', es: 'Servicios', en: 'Services' },
-    { selector: '.footer-col:nth-child(1) a:nth-child(2)', es: 'Diseño de páginas web', en: 'Website design' },
-    { selector: '.footer-col:nth-child(1) a:nth-child(3)', es: 'Arreglo y mantenimiento', en: 'Fixes and maintenance' },
-    { selector: '.footer-col:nth-child(1) a:nth-child(4)', es: 'Apps a partir de tu web', en: 'Apps from your website' },
-    { selector: '.footer-col:nth-child(2) .footer-col-title', es: 'Contacto', en: 'Contact' },
-    { selector: '.footer-col:nth-child(3) .footer-col-title', es: 'Legal', en: 'Legal' },
-    { selector: '.footer-col:nth-child(3) a:nth-child(2)', es: 'Privacidad', en: 'Privacy' },
-    { selector: '.footer-col:nth-child(3) a:nth-child(3)', es: 'Términos', en: 'Terms' },
-    { selector: '.footer-bottom > span', es: '© 2026 buildbee. Todos los derechos reservados.', en: '© 2026 buildbee. All rights reserved.' },
+    {"selector":"title","es":"BuildBeeTech — Desarrollo web, apps y automatización para tu negocio","en":"BuildBeeTech — Web development, apps and automation for your business"},
+    {"selector":"meta[name=\"description\"]","attr":"content","es":"BuildBeeTech: diseño páginas web, desarrollo apps a la medida, sitios bilingües y mantenimiento. Cotiza tu proyecto en segundos y recibe respuesta en menos de 24 horas.","en":"BuildBeeTech: website design, custom web apps, bilingual sites and maintenance. Get an instant project estimate and a reply in under 24 hours."},
+    {"selector":".logo[aria-label]","all":true,"attr":"aria-label","es":"BuildBeeTech — inicio","en":"BuildBeeTech — home"},
+    {"selector":".nav-links a:nth-child(1)","es":"Servicios","en":"Services"},
+    {"selector":".nav-links a:nth-child(2)","es":"Cotizador","en":"Estimator"},
+    {"selector":".nav-links a:nth-child(3)","es":"Proyectos","en":"Projects"},
+    {"selector":".nav-links a:nth-child(4)","es":"Proceso","en":"Process"},
+    {"selector":".nav-links a:nth-child(5)","es":"Contacto","en":"Contact"},
+    {"selector":".nav-actions .btn","es":"Contáctame","en":"Contact me"},
+    {"selector":".badge","es":"⚡ Desarrollo Web, Apps & Automatización","en":"⚡ Web Development, Apps & Automation"},
+    {"selector":".hero-copy h1","es":"Convertimos tus ideas en webs y apps que venden.","en":"We turn your ideas into websites and apps that sell."},
+    {"selector":".hero-copy .lead","es":"BuildBeeTech diseña y desarrolla sitios web, aplicaciones a la medida y automatizaciones que hacen crecer tu negocio. Rápido, claro y sin sorpresas.","en":"BuildBeeTech designs and develops websites, custom web apps and automations that help your business grow. Fast, clear, no surprises."},
+    {"selector":".hero-chips li:nth-child(1)","es":"✓ Entrega en 1–3 semanas","en":"✓ Delivered in 1–3 weeks"},
+    {"selector":".hero-chips li:nth-child(2)","es":"✓ 100% responsive","en":"✓ 100% responsive"},
+    {"selector":".hero-chips li:nth-child(3)","es":"✓ Soporte incluido","en":"✓ Support included"},
+    {"selector":".hero-actions .btn-primary","es":"Cotizar Proyecto","en":"Get a Quote"},
+    {"selector":".hero-actions .btn-ghost","es":"Ver Portafolio →","en":"View Portfolio →"},
+    {"selector":".fine-print","es":"Respondo en menos de 24 horas","en":"I reply in under 24 hours"},
+    {"selector":".hero-panel-eyebrow","es":"Mis servicios","en":"My services"},
+    {"selector":".hero-panel-title","es":"Todo lo que tu negocio digital necesita, en un solo lugar.","en":"Everything your digital business needs, in one place."},
+    {"selector":".hero-panel-item:nth-of-type(1) .hero-panel-item-title","es":"Diseño web","en":"Web design"},
+    {"selector":".hero-panel-item:nth-of-type(1) .hero-panel-item-desc","es":"Sitios rápidos y a tu medida, listos para publicar.","en":"Fast custom sites, ready to launch."},
+    {"selector":".hero-panel-item:nth-of-type(2) .hero-panel-item-title","es":"Mantenimiento","en":"Maintenance"},
+    {"selector":".hero-panel-item:nth-of-type(2) .hero-panel-item-desc","es":"Reviso y arreglo tu web si algo deja de funcionar.","en":"I review and fix your site if something stops working."},
+    {"selector":".hero-panel-item:nth-of-type(3) .hero-panel-item-title","es":"Apps","en":"Apps"},
+    {"selector":".hero-panel-item:nth-of-type(3) .hero-panel-item-desc","es":"Convierto tu sitio en una app para tus clientes.","en":"I turn your site into an app for your customers."},
+    {"selector":".hero-panel-link","es":"Calcular mi precio estimado →","en":"Calculate my estimated price →"},
+    {"selector":"#cotizador .section-head h2","es":"Cotizador instantáneo","en":"Instant project estimator"},
+    {"selector":"#cotizador .section-head p","es":"Arma tu proyecto ideal y obtén un estimado de precio y tiempo de entrega en segundos. Sin formularios, sin esperas.","en":"Build your ideal project and get an estimated price and delivery time in seconds. No forms, no waiting."},
+    {"selector":".estimator-fieldset:nth-of-type(1) legend","html":true,"es":"1 · ¿Qué necesitas? <small>(elige uno)</small>","en":"1 · What do you need? <small>(pick one)</small>"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) strong","es":"Landing Page","en":"Landing Page"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) small","es":"Página de aterrizaje para vender o captar clientes.","en":"A landing page to sell or capture leads."},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) .option-meta","es":"$350 · ~5 días","en":"$350 · ~5 days"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) strong","es":"Sitio Web Completo","en":"Full Website"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) small","es":"Varias secciones, blog y presencia de marca.","en":"Multiple sections, blog and brand presence."},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) .option-meta","es":"$650 · ~2 semanas","en":"$650 · ~2 weeks"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) strong","es":"App Web a la Medida","en":"Custom Web App"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) small","es":"Reservas, paneles, login y funciones propias.","en":"Bookings, dashboards, logins and custom features."},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) .option-meta","es":"$1,200 · ~4 semanas","en":"$1,200 · ~4 weeks"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) strong","es":"Mantenimiento / Arreglo","en":"Maintenance / Fixes"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) small","es":"Actualizaciones, correcciones y soporte mensual.","en":"Updates, bug fixes and monthly support."},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) .option-meta","es":"$150 · ~3 días","en":"$150 · ~3 days"},
+    {"selector":".estimator-fieldset:nth-of-type(2) legend","html":true,"es":"2 · Extras <small>(opcional)</small>","en":"2 · Add-ons <small>(optional)</small>"},
+    {"selector":".option-grid-extras .option-card:nth-child(1) strong","es":"Sitio bilingüe (ES/EN)","en":"Bilingual site (ES/EN)"},
+    {"selector":".option-grid-extras .option-card:nth-child(1) .option-meta","es":"+$200 · +3 días","en":"+$200 · +3 days"},
+    {"selector":".option-grid-extras .option-card:nth-child(2) strong","es":"SEO básico","en":"Basic SEO"},
+    {"selector":".option-grid-extras .option-card:nth-child(2) .option-meta","es":"+$150 · +2 días","en":"+$150 · +2 days"},
+    {"selector":".option-grid-extras .option-card:nth-child(3) strong","es":"Tienda en línea","en":"Online store"},
+    {"selector":".option-grid-extras .option-card:nth-child(3) .option-meta","es":"+$400 · +1 semana","en":"+$400 · +1 week"},
+    {"selector":".option-grid-extras .option-card:nth-child(4) strong","es":"Reservas en línea","en":"Online bookings"},
+    {"selector":".option-grid-extras .option-card:nth-child(4) .option-meta","es":"+$300 · +4 días","en":"+$300 · +4 days"},
+    {"selector":".estimator-fieldset:nth-of-type(3) legend","es":"3 · Urgencia","en":"3 · Urgency"},
+    {"selector":".urgency-grid .urgency-card:nth-child(1) strong","es":"Normal","en":"Standard"},
+    {"selector":".urgency-grid .urgency-card:nth-child(1) small","es":"Agendado según disponibilidad","en":"Scheduled based on availability"},
+    {"selector":".urgency-grid .urgency-card:nth-child(2) strong","es":"Rápida ⚡","en":"Rush ⚡"},
+    {"selector":".urgency-grid .urgency-card:nth-child(2) small","es":"+25% · prioridad esta semana","en":"+25% · priority this week"},
+    {"selector":".summary-eyebrow","es":"Tu estimado","en":"Your estimate"},
+    {"selector":".summary-note","es":"Estimado referencial. El precio final se confirma tras una charla de 15 minutos.","en":"Reference estimate. The final price is confirmed after a 15-minute chat."},
+    {"selector":".estimator-summary .summary-cta","es":"Solicitar cotización exacta","en":"Request an exact quote"},
+    {"selector":"#servicios .section-head h2","es":"En qué puedo ayudarte","en":"How I can help you"},
+    {"selector":"#servicios .section-head p","es":"Tres formas de trabajar juntos, según en qué punto esté tu proyecto.","en":"Three ways to work together depending on where your project is right now."},
+    {"selector":"#servicios .card:nth-of-type(1) h3","es":"Diseño de páginas web","en":"Website design"},
+    {"selector":"#servicios .card:nth-of-type(1) p","es":"Sitios modernos pensados para convertir, no solo para verse bien.","en":"Modern sites built to convert, not just to look good."},
+    {"selector":"#servicios .card:nth-of-type(1) .card-list li:nth-child(1)","es":"Diseño a tu medida desde cero","en":"Custom design from scratch"},
+    {"selector":"#servicios .card:nth-of-type(1) .card-list li:nth-child(2)","es":"Carga rápida en cualquier pantalla","en":"Fast loading on any screen"},
+    {"selector":"#servicios .card:nth-of-type(1) .card-list li:nth-child(3)","es":"Listos para publicar y compartir","en":"Ready to publish and share"},
+    {"selector":"#servicios .card:nth-of-type(2) h3","es":"Arreglo y mantenimiento","en":"Fixes and maintenance"},
+    {"selector":"#servicios .card:nth-of-type(2) p","es":"¿Tu web se rompió o quedó desactualizada? La dejo como nueva.","en":"Is your website broken or outdated? I bring it back to life."},
+    {"selector":"#servicios .card:nth-of-type(2) .card-list li:nth-child(1)","es":"Diagnóstico rápido de errores","en":"Quick error diagnosis"},
+    {"selector":"#servicios .card:nth-of-type(2) .card-list li:nth-child(2)","es":"Actualizaciones de contenido y diseño","en":"Content and design updates"},
+    {"selector":"#servicios .card:nth-of-type(2) .card-list li:nth-child(3)","es":"Planes mensuales de soporte","en":"Monthly support plans"},
+    {"selector":"#servicios .card:nth-of-type(3) h3","es":"Apps a partir de tu web","en":"Apps from your website"},
+    {"selector":"#servicios .card:nth-of-type(3) p","es":"Convierto tu sitio en una app que tus clientes llevan en el bolsillo.","en":"I turn your site into an app your customers carry in their pocket."},
+    {"selector":"#servicios .card:nth-of-type(3) .card-list li:nth-child(1)","es":"Funciona en iOS y Android","en":"Works on iOS and Android"},
+    {"selector":"#servicios .card:nth-of-type(3) .card-list li:nth-child(2)","es":"Paneles de administración incluidos","en":"Admin panels included"},
+    {"selector":"#servicios .card:nth-of-type(3) .card-list li:nth-child(3)","es":"Aprovecha lo que ya tienes","en":"Makes the most of what you already have"},
+    {"selector":"#proyectos .section-head h2","es":"Casos de éxito","en":"Success stories"},
+    {"selector":"#proyectos .section-head p","es":"Proyectos reales, construidos de principio a fin. Así se ve trabajar con BuildBeeTech.","en":"Real projects, built end-to-end. This is what working with BuildBeeTech looks like."},
+    {"selector":".portfolio-tile:nth-child(1) img","attr":"alt","es":"Captura de inicio del sitio Pilates con Jime","en":"Homepage screenshot of the Pilates con Jime website"},
+    {"selector":".portfolio-tile:nth-child(1) .portfolio-tag","es":"Sitio web · App · Panel de administración","en":"Website · App · Admin panel"},
+    {"selector":".portfolio-tile:nth-child(1) p","es":"Reserva de clases, calendario y gestión de clientes para una instructora de pilates a domicilio.","en":"Class booking, calendar and client management for an in-home pilates instructor."},
+    {"selector":".portfolio-tile:nth-child(1) .portfolio-links .btn-primary","es":"Ver proyecto","en":"View project"},
+    {"selector":".portfolio-tile:nth-child(1) .portfolio-links .btn-ghost","es":"Ver código","en":"View code"},
+    {"selector":".portfolio-tile:nth-child(2) .portfolio-tag","es":"Próximamente","en":"Coming soon"},
+    {"selector":".portfolio-tile:nth-child(2) h3","es":"Tu proyecto aquí","en":"Your project here"},
+    {"selector":".portfolio-tile:nth-child(2) p","es":"Soy el siguiente caso de éxito: cuéntame tu idea y la construimos juntos esta misma semana.","en":"I am the next success story: tell me your idea and we build it together this week."},
+    {"selector":".portfolio-tile:nth-child(2) .portfolio-links .btn-primary","es":"Cotizar mi proyecto","en":"Quote my project"},
+    {"selector":"#proceso .section-head h2","es":"Cómo trabajamos juntos","en":"How we work together"},
+    {"selector":"#proceso .section-head p","es":"Un proceso simple, sin letra pequeña, del primer mensaje a la entrega final.","en":"A simple process, with no fine print, from first message to final delivery."},
+    {"selector":".steps-grid .step:nth-child(1) h3","es":"Cuéntame tu proyecto","en":"Tell me about your project"},
+    {"selector":".steps-grid .step:nth-child(1) p","es":"Escríbeme y hablamos sobre lo que necesitas: una web nueva, un arreglo o una app.","en":"Send me a message and we’ll discuss what you need: a new site, a fix, or an app."},
+    {"selector":".steps-grid .step:nth-child(2) h3","es":"Preparo una propuesta","en":"I prepare a proposal"},
+    {"selector":".steps-grid .step:nth-child(2) p","es":"Te envío un plan claro con alcance y tiempos, sin sorpresas ni letra pequeña.","en":"I send you a clear plan with scope and timeline, no surprises and no fine print."},
+    {"selector":".steps-grid .step:nth-child(3) h3","es":"Entrego y doy soporte","en":"I deliver and support"},
+    {"selector":".steps-grid .step:nth-child(3) p","es":"Recibes tu proyecto terminado, y sigo disponible si necesitas ajustes después.","en":"You receive your finished project, and I remain available if you need adjustments later."},
+    {"selector":".about .eyebrow","es":"Sobre mí","en":"About me"},
+    {"selector":".about-inner p","html":true,"es":"Fundador de BuildBeeTech. Soy diseñador y desarrollador web freelance. Me dedico a construir sitios y aplicaciones que resuelven problemas reales, como <a href=\"#proyectos\">Pilates con Jime</a>, una app que ayuda a gestionar clases y reservas de principio a fin. Trabajo de cerca con cada cliente, desde la primera idea hasta que el proyecto está funcionando.","en":"Founder of BuildBeeTech. I’m a freelance web designer and developer. I build sites and apps that solve real problems, such as <a href=\"#proyectos\">Pilates con Jime</a>, an app that helps manage classes and bookings end-to-end. I work closely with each client, from the first idea until the project is live."},
+    {"selector":"#contacto h2","es":"Hablemos de tu proyecto","en":"Let’s talk about your project"},
+    {"selector":".contact-inner > p","es":"Cuéntame qué necesitas y te responderé en menos de 24 horas.","en":"Tell me what you need and I’ll reply in under 24 hours."},
+    {"selector":".contact-label","es":"Email","en":"Email"},
+    {"selector":".footer-brand p","es":"Desarrollo web, apps a la medida y soluciones digitales para negocios que quieren funcionar sin problemas.","en":"Web development, custom apps and digital solutions for businesses that want to run without friction."},
+    {"selector":".footer-col:nth-child(1) .footer-col-title","es":"Servicios","en":"Services"},
+    {"selector":".footer-col:nth-child(1) a:nth-child(2)","es":"Diseño de páginas web","en":"Website design"},
+    {"selector":".footer-col:nth-child(1) a:nth-child(3)","es":"Arreglo y mantenimiento","en":"Fixes and maintenance"},
+    {"selector":".footer-col:nth-child(1) a:nth-child(4)","es":"Apps a partir de tu web","en":"Apps from your website"},
+    {"selector":".footer-col:nth-child(2) .footer-col-title","es":"Contacto","en":"Contact"},
+    {"selector":".footer-col:nth-child(3) .footer-col-title","es":"Legal","en":"Legal"},
+    {"selector":".footer-col:nth-child(3) a:nth-child(2)","es":"Privacidad","en":"Privacy"},
+    {"selector":".footer-col:nth-child(3) a:nth-child(3)","es":"Términos","en":"Terms"},
+    {"selector":".footer-bottom > span","es":"© 2026 BuildBeeTech. Todos los derechos reservados.","en":"© 2026 BuildBeeTech. All rights reserved."},
   ],
   privacidad: [
-    { selector: 'title', es: 'Política de privacidad — buildbee', en: 'Privacy policy — buildbee' },
-    { selector: 'meta[name="description"]', attr: 'content', es: 'Política de privacidad de buildbee: qué datos se recogen a través de este sitio y cómo se usan.', en: 'buildbee privacy policy: what data is collected through this site and how it is used.' },
-    { selector: '.logo[aria-label]', all: true, attr: 'aria-label', es: 'buildbee — inicio', en: 'buildbee — home' },
+    { selector: 'title', es: 'Política de privacidad — BuildBeeTech', en: 'Privacy policy — BuildBeeTech' },
+    { selector: 'meta[name="description"]', attr: 'content', es: 'Política de privacidad de BuildBeeTech: qué datos se recogen a través de este sitio y cómo se usan.', en: 'BuildBeeTech privacy policy: what data is collected through this site and how it is used.' },
+    { selector: '.logo[aria-label]', all: true, attr: 'aria-label', es: 'BuildBeeTech — inicio', en: 'BuildBeeTech — home' },
     { selector: '.nav-links a:nth-child(1)', es: 'Servicios', en: 'Services' },
     { selector: '.nav-links a:nth-child(2)', es: 'Proceso', en: 'Process' },
     { selector: '.nav-links a:nth-child(3)', es: 'Contacto', en: 'Contact' },
     { selector: '.nav-actions .btn', es: 'Contáctame', en: 'Contact me' },
     { selector: '.legal-main h1', es: 'Política de privacidad', en: 'Privacy policy' },
     { selector: '.legal-updated', es: 'Última actualización: septiembre de 2026', en: 'Last updated: September 2026' },
-    { selector: '.legal-main .container > p:nth-of-type(2)', es: 'buildbee es un estudio unipersonal de diseño y desarrollo web con base en Costa Rica. Esta página explica qué información se recoge a través de este sitio y cómo se utiliza.', en: 'buildbee is a one-person web design and development studio based in Costa Rica. This page explains what information is collected through this website and how it is used.' },
+    { selector: '.legal-main .container > p:nth-of-type(2)', es: 'BuildBeeTech es un estudio de desarrollo web y soluciones digitales con base en Costa Rica. Esta página explica qué información se recoge a través de este sitio y cómo se utiliza.', en: 'BuildBeeTech is a web development and digital solutions studio based in Costa Rica. This page explains what information is collected through this website and how it is used.' },
     { selector: '.legal-main h2:nth-of-type(1)', es: 'Qué información se recoge', en: 'What information is collected' },
     { selector: '.legal-main h2:nth-of-type(1) + p', html: true, es: 'Este sitio no tiene formularios ni scripts de seguimiento propios. Los únicos datos personales que se reciben son los que envías voluntariamente al escribir por correo (<a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a>) o por WhatsApp: normalmente tu nombre, datos de contacto y la información del proyecto que quieras compartir.', en: 'This site does not use forms or proprietary tracking scripts. The only personal data received is what you voluntarily share when contacting by email (<a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a>) or WhatsApp: typically your name, contact details, and the project information you choose to share.' },
     { selector: '.legal-main h2:nth-of-type(2)', es: 'Para qué se usa', en: 'What it is used for' },
@@ -99,7 +148,7 @@ const PAGE_TRANSLATIONS = {
     { selector: '.legal-main h2:nth-of-type(7) + p', es: 'Esta política puede actualizarse ocasionalmente. La fecha de la última actualización aparece al inicio de esta página.', en: 'This policy may be updated occasionally. The latest update date appears at the top of this page.' },
     { selector: '.legal-main h2:nth-of-type(8)', es: 'Contacto', en: 'Contact' },
     { selector: '.legal-main h2:nth-of-type(8) + p', html: true, es: 'Si tienes preguntas sobre esta política, escríbeme a <a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a> o por <a href="https://wa.me/50672018483" target="_blank" rel="noopener">WhatsApp</a>.', en: 'If you have questions about this policy, write to <a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a> or contact me via <a href="https://wa.me/50672018483" target="_blank" rel="noopener">WhatsApp</a>.' },
-    { selector: '.footer-brand p', es: 'Diseño web, mantenimiento y apps para negocios que quieren funcionar sin problemas.', en: 'Web design, maintenance and apps for businesses that want to run without friction.' },
+    { selector: '.footer-brand p', es: 'Desarrollo web, apps a la medida y soluciones digitales para negocios que quieren funcionar sin problemas.', en: 'Web development, custom apps and digital solutions for businesses that want to run without friction.' },
     { selector: '.footer-col:nth-child(1) .footer-col-title', es: 'Servicios', en: 'Services' },
     { selector: '.footer-col:nth-child(1) a:nth-child(2)', es: 'Diseño de páginas web', en: 'Website design' },
     { selector: '.footer-col:nth-child(1) a:nth-child(3)', es: 'Arreglo y mantenimiento', en: 'Fixes and maintenance' },
@@ -109,20 +158,20 @@ const PAGE_TRANSLATIONS = {
     { selector: '.footer-col:nth-child(3) .footer-col-title', es: 'Legal', en: 'Legal' },
     { selector: '.footer-col:nth-child(3) a:nth-child(2)', es: 'Privacidad', en: 'Privacy' },
     { selector: '.footer-col:nth-child(3) a:nth-child(3)', es: 'Términos', en: 'Terms' },
-    { selector: '.footer-bottom > span', es: '© 2026 buildbee. Todos los derechos reservados.', en: '© 2026 buildbee. All rights reserved.' },
+    { selector: '.footer-bottom > span', es: '© 2026 BuildBeeTech. Todos los derechos reservados.', en: '© 2026 BuildBeeTech. All rights reserved.' },
     { selector: '.whatsapp-float', attr: 'aria-label', es: 'Escribir por WhatsApp', en: 'Message on WhatsApp' },
   ],
   terminos: [
-    { selector: 'title', es: 'Términos de servicio — buildbee', en: 'Terms of service — buildbee' },
-    { selector: 'meta[name="description"]', attr: 'content', es: 'Términos de servicio de buildbee: cómo funcionan los proyectos de diseño web, mantenimiento y apps.', en: 'buildbee terms of service: how web design, maintenance, and app projects work.' },
-    { selector: '.logo[aria-label]', all: true, attr: 'aria-label', es: 'buildbee — inicio', en: 'buildbee — home' },
+    { selector: 'title', es: 'Términos de servicio — BuildBeeTech', en: 'Terms of service — BuildBeeTech' },
+    { selector: 'meta[name="description"]', attr: 'content', es: 'Términos de servicio de BuildBeeTech: cómo funcionan los proyectos de diseño web, mantenimiento y apps.', en: 'BuildBeeTech terms of service: how web design, maintenance, and app projects work.' },
+    { selector: '.logo[aria-label]', all: true, attr: 'aria-label', es: 'BuildBeeTech — inicio', en: 'BuildBeeTech — home' },
     { selector: '.nav-links a:nth-child(1)', es: 'Servicios', en: 'Services' },
     { selector: '.nav-links a:nth-child(2)', es: 'Proceso', en: 'Process' },
     { selector: '.nav-links a:nth-child(3)', es: 'Contacto', en: 'Contact' },
     { selector: '.nav-actions .btn', es: 'Contáctame', en: 'Contact me' },
     { selector: '.legal-main h1', es: 'Términos de servicio', en: 'Terms of service' },
     { selector: '.legal-updated', es: 'Última actualización: septiembre de 2026', en: 'Last updated: September 2026' },
-    { selector: '.legal-main .container > p:nth-of-type(2)', es: 'Estos términos aplican a los servicios de diseño web, mantenimiento de sitios y desarrollo de apps que ofrece buildbee (estudio unipersonal con base en Costa Rica). Al contratar un proyecto, aceptas lo siguiente.', en: 'These terms apply to the web design, site maintenance, and app development services offered by buildbee (a one-person studio based in Costa Rica). By hiring a project, you accept the following.' },
+    { selector: '.legal-main .container > p:nth-of-type(2)', es: 'Estos términos aplican a los servicios de diseño web, mantenimiento de sitios y desarrollo de apps que ofrece BuildBeeTech (estudio de desarrollo web con base en Costa Rica). Al contratar un proyecto, aceptas lo siguiente.', en: 'These terms apply to the web design, site maintenance, and app development services offered by BuildBeeTech (a web development studio based in Costa Rica). By hiring a project, you accept the following.' },
     { selector: '.legal-main h2:nth-of-type(1)', es: 'Cómo funciona un proyecto', en: 'How a project works' },
     { selector: '.legal-main h2:nth-of-type(1) + ul li:nth-child(1)', es: 'Me escribes por correo o WhatsApp contándome qué necesitas.', en: 'You contact me by email or WhatsApp and tell me what you need.' },
     { selector: '.legal-main h2:nth-of-type(1) + ul li:nth-child(2)', es: 'Te envío una propuesta con el alcance del trabajo, tiempo estimado de entrega y precio.', en: 'I send you a proposal with project scope, estimated delivery time, and price.' },
@@ -144,7 +193,7 @@ const PAGE_TRANSLATIONS = {
     { selector: '.legal-main h2:nth-of-type(8) + p', es: 'Estos términos se rigen por las leyes de Costa Rica.', en: 'These terms are governed by the laws of Costa Rica.' },
     { selector: '.legal-main h2:nth-of-type(9)', es: 'Contacto', en: 'Contact' },
     { selector: '.legal-main h2:nth-of-type(9) + p', html: true, es: 'Para cualquier duda sobre estos términos, escríbeme a <a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a> o por <a href="https://wa.me/50672018483" target="_blank" rel="noopener">WhatsApp</a>.', en: 'For any questions about these terms, write to <a href="mailto:angelor256@gmail.com">angelor256@gmail.com</a> or contact me via <a href="https://wa.me/50672018483" target="_blank" rel="noopener">WhatsApp</a>.' },
-    { selector: '.footer-brand p', es: 'Diseño web, mantenimiento y apps para negocios que quieren funcionar sin problemas.', en: 'Web design, maintenance and apps for businesses that want to run without friction.' },
+    { selector: '.footer-brand p', es: 'Desarrollo web, apps a la medida y soluciones digitales para negocios que quieren funcionar sin problemas.', en: 'Web development, custom apps and digital solutions for businesses that want to run without friction.' },
     { selector: '.footer-col:nth-child(1) .footer-col-title', es: 'Servicios', en: 'Services' },
     { selector: '.footer-col:nth-child(1) a:nth-child(2)', es: 'Diseño de páginas web', en: 'Website design' },
     { selector: '.footer-col:nth-child(1) a:nth-child(3)', es: 'Arreglo y mantenimiento', en: 'Fixes and maintenance' },
@@ -154,7 +203,7 @@ const PAGE_TRANSLATIONS = {
     { selector: '.footer-col:nth-child(3) .footer-col-title', es: 'Legal', en: 'Legal' },
     { selector: '.footer-col:nth-child(3) a:nth-child(2)', es: 'Privacidad', en: 'Privacy' },
     { selector: '.footer-col:nth-child(3) a:nth-child(3)', es: 'Términos', en: 'Terms' },
-    { selector: '.footer-bottom > span', es: '© 2026 buildbee. Todos los derechos reservados.', en: '© 2026 buildbee. All rights reserved.' },
+    { selector: '.footer-bottom > span', es: '© 2026 BuildBeeTech. Todos los derechos reservados.', en: '© 2026 BuildBeeTech. All rights reserved.' },
     { selector: '.whatsapp-float', attr: 'aria-label', es: 'Escribir por WhatsApp', en: 'Message on WhatsApp' },
   ],
 };
@@ -274,7 +323,123 @@ languageButtons.forEach((button) => {
       return;
     }
     applyLanguage(selectedLanguage);
+    if (typeof window.refreshEstimator === 'function') {
+      window.refreshEstimator();
+    }
   });
 });
 
 applyLanguage(getInitialLanguage(), false);
+
+/* ============================================================
+   Cotizador interactivo (estimator) — cálculo en tiempo real
+   ============================================================ */
+const ESTIMATOR_CATALOG = {
+  types: {
+    landing: { es: 'Landing Page', en: 'Landing Page', price: 350, days: 5 },
+    sitio: { es: 'Sitio Web Completo', en: 'Full Website', price: 650, days: 10 },
+    app: { es: 'App Web a la Medida', en: 'Custom Web App', price: 1200, days: 20 },
+    mantenimiento: { es: 'Mantenimiento / Arreglo', en: 'Maintenance / Fixes', price: 150, days: 3 },
+  },
+  extras: {
+    bilingue: { es: 'Sitio bilingüe (ES/EN)', en: 'Bilingual site (ES/EN)', price: 200, days: 3 },
+    seo: { es: 'SEO básico', en: 'Basic SEO', price: 150, days: 2 },
+    ecommerce: { es: 'Tienda en línea', en: 'Online store', price: 400, days: 5 },
+    reservas: { es: 'Reservas en línea', en: 'Online bookings', price: 300, days: 4 },
+  },
+  urgency: {
+    normal: { es: 'Normal', en: 'Standard', multiplier: 1, speedFactor: 1 },
+    rapida: { es: 'Rápida ⚡', en: 'Rush ⚡', multiplier: 1.25, speedFactor: 0.75 },
+  },
+  ui: {
+    businessDaysEs: 'días hábiles',
+    businessDaysEn: 'business days',
+    approx: '≈',
+    rangeSeparator: ' – ',
+  },
+};
+
+const formatMoney = (amount) => '$' + Math.round(amount).toLocaleString('en-US');
+
+const computeEstimate = () => {
+  const typeInput = document.querySelector('input[name="est-type"]:checked');
+  if (!typeInput) {
+    return null;
+  }
+
+  const base = ESTIMATOR_CATALOG.types[typeInput.value];
+  let price = base.price;
+  let days = base.days;
+  const breakdown = [{ key: typeInput.value, item: base }];
+
+  document.querySelectorAll('input[name="est-extra"]:checked').forEach((extraInput) => {
+    const extra = ESTIMATOR_CATALOG.extras[extraInput.value];
+    if (!extra) {
+      return;
+    }
+    price += extra.price;
+    days += extra.days;
+    breakdown.push({ key: extraInput.value, item: extra });
+  });
+
+  const urgencyInput = document.querySelector('input[name="est-urgency"]:checked');
+  const urgency = urgencyInput ? ESTIMATOR_CATALOG.urgency[urgencyInput.value] : ESTIMATOR_CATALOG.urgency.normal;
+
+  price *= urgency.multiplier;
+  days = Math.max(2, Math.ceil(days * urgency.speedFactor));
+
+  return { price, days, breakdown, urgency };
+};
+
+const renderEstimator = () => {
+  const priceEl = document.getElementById('est-price');
+  const daysEl = document.getElementById('est-days');
+  const breakdownEl = document.getElementById('est-breakdown');
+  const ctaEl = document.getElementById('est-cta');
+  if (!priceEl || !daysEl || !breakdownEl) {
+    return;
+  }
+
+  const result = computeEstimate();
+  if (!result) {
+    return;
+  }
+
+  const lang = currentLanguage;
+  const low = result.price * 0.95;
+  const high = result.price * 1.2;
+  const businessDays = lang === 'en' ? ESTIMATOR_CATALOG.ui.businessDaysEn : ESTIMATOR_CATALOG.ui.businessDaysEs;
+
+  priceEl.textContent = formatMoney(low) + ESTIMATOR_CATALOG.ui.rangeSeparator + formatMoney(high);
+  daysEl.textContent = ESTIMATOR_CATALOG.ui.approx + ' ' + result.days + ' ' + businessDays;
+
+  breakdownEl.innerHTML = '';
+  result.breakdown.forEach(({ item }) => {
+    const li = document.createElement('li');
+    li.textContent = item[lang] + ' · ' + formatMoney(item.price) + ' · +' + item.days + ' d';
+    breakdownEl.appendChild(li);
+  });
+
+  if (ctaEl) {
+    const summaryText = encodeURIComponent(
+      (lang === 'en' ? 'Hi BuildBeeTech! From your estimator: ' : '¡Hola BuildBeeTech! Desde tu cotizador: ')
+      + result.breakdown.map(({ item }) => item[lang]).join(' + ')
+      + (lang === 'en'
+        ? ' (Rush: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'yes' : 'no') + '). Estimated ' + formatMoney(result.price) + '. I would like an exact quote.'
+        : ' (Urgencia rápida: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'sí' : 'no') + '). Estimado: ' + formatMoney(result.price) + '. Quiero una cotización exacta.')
+    );
+    ctaEl.href = 'mailto:buildbeetech@gmail.com?subject=' + encodeURIComponent(lang === 'en' ? 'Project quote request' : 'Solicitud de cotización') + '&body=' + summaryText;
+  }
+
+  priceEl.classList.remove('is-updated');
+  void priceEl.offsetWidth; // reinicia la animación
+  priceEl.classList.add('is-updated');
+};
+
+window.refreshEstimator = renderEstimator;
+
+document.querySelectorAll('#cotizador input[type="radio"], #cotizador input[type="checkbox"]').forEach((input) => {
+  input.addEventListener('change', renderEstimator);
+});
+
+renderEstimator();
