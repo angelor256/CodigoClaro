@@ -34,38 +34,38 @@ const PAGE_TRANSLATIONS = {
     {"selector":".hero-panel-item:nth-of-type(2) .hero-panel-item-desc","es":"Reviso y arreglo tu web si algo deja de funcionar.","en":"I review and fix your site if something stops working."},
     {"selector":".hero-panel-item:nth-of-type(3) .hero-panel-item-title","es":"Apps","en":"Apps"},
     {"selector":".hero-panel-item:nth-of-type(3) .hero-panel-item-desc","es":"Convierto tu sitio en una app para tus clientes.","en":"I turn your site into an app for your customers."},
-    {"selector":".hero-panel-link","es":"Calcular mi precio estimado →","en":"Calculate my estimated price →"},
+    {"selector":".hero-panel-link","es":"Calcular mi tiempo de entrega →","en":"Calculate my delivery time →"},
     {"selector":"#cotizador .section-head h2","es":"Cotizador instantáneo","en":"Instant project estimator"},
-    {"selector":"#cotizador .section-head p","es":"Arma tu proyecto ideal y obtén un estimado de precio y tiempo de entrega en segundos. Sin formularios, sin esperas.","en":"Build your ideal project and get an estimated price and delivery time in seconds. No forms, no waiting."},
+    {"selector":"#cotizador .section-head p","es":"Arma tu proyecto ideal y obtén un estimado del tiempo de entrega en segundos. Sin formularios, sin esperas.","en":"Build your ideal project and get an estimated delivery time in seconds. No forms, no waiting."},
     {"selector":".estimator-fieldset:nth-of-type(1) legend","html":true,"es":"1 · ¿Qué necesitas? <small>(elige uno)</small>","en":"1 · What do you need? <small>(pick one)</small>"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) strong","es":"Landing Page","en":"Landing Page"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) small","es":"Página de aterrizaje para vender o captar clientes.","en":"A landing page to sell or capture leads."},
-    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) .option-meta","es":"$350 · ~5 días","en":"$350 · ~5 days"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(1) .option-meta","es":"~5 días","en":"~5 days"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) strong","es":"Sitio Web Completo","en":"Full Website"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) small","es":"Varias secciones, blog y presencia de marca.","en":"Multiple sections, blog and brand presence."},
-    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) .option-meta","es":"$650 · ~2 semanas","en":"$650 · ~2 weeks"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(2) .option-meta","es":"~2 semanas","en":"~2 weeks"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) strong","es":"App Web a la Medida","en":"Custom Web App"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) small","es":"Reservas, paneles, login y funciones propias.","en":"Bookings, dashboards, logins and custom features."},
-    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) .option-meta","es":"$1,200 · ~4 semanas","en":"$1,200 · ~4 weeks"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(3) .option-meta","es":"~4 semanas","en":"~4 weeks"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) strong","es":"Mantenimiento / Arreglo","en":"Maintenance / Fixes"},
     {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) small","es":"Actualizaciones, correcciones y soporte mensual.","en":"Updates, bug fixes and monthly support."},
-    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) .option-meta","es":"$150 · ~3 días","en":"$150 · ~3 days"},
+    {"selector":".option-grid:not(.option-grid-extras) .option-card:nth-child(4) .option-meta","es":"~3 días","en":"~3 days"},
     {"selector":".estimator-fieldset:nth-of-type(2) legend","html":true,"es":"2 · Extras <small>(opcional)</small>","en":"2 · Add-ons <small>(optional)</small>"},
     {"selector":".option-grid-extras .option-card:nth-child(1) strong","es":"Sitio bilingüe (ES/EN)","en":"Bilingual site (ES/EN)"},
-    {"selector":".option-grid-extras .option-card:nth-child(1) .option-meta","es":"+$200 · +3 días","en":"+$200 · +3 days"},
+    {"selector":".option-grid-extras .option-card:nth-child(1) .option-meta","es":"+3 días","en":"+3 days"},
     {"selector":".option-grid-extras .option-card:nth-child(2) strong","es":"SEO básico","en":"Basic SEO"},
-    {"selector":".option-grid-extras .option-card:nth-child(2) .option-meta","es":"+$150 · +2 días","en":"+$150 · +2 days"},
+    {"selector":".option-grid-extras .option-card:nth-child(2) .option-meta","es":"+2 días","en":"+2 days"},
     {"selector":".option-grid-extras .option-card:nth-child(3) strong","es":"Tienda en línea","en":"Online store"},
-    {"selector":".option-grid-extras .option-card:nth-child(3) .option-meta","es":"+$400 · +1 semana","en":"+$400 · +1 week"},
+    {"selector":".option-grid-extras .option-card:nth-child(3) .option-meta","es":"+1 semana","en":"+1 week"},
     {"selector":".option-grid-extras .option-card:nth-child(4) strong","es":"Reservas en línea","en":"Online bookings"},
-    {"selector":".option-grid-extras .option-card:nth-child(4) .option-meta","es":"+$300 · +4 días","en":"+$300 · +4 days"},
+    {"selector":".option-grid-extras .option-card:nth-child(4) .option-meta","es":"+4 días","en":"+4 days"},
     {"selector":".estimator-fieldset:nth-of-type(3) legend","es":"3 · Urgencia","en":"3 · Urgency"},
     {"selector":".urgency-grid .urgency-card:nth-child(1) strong","es":"Normal","en":"Standard"},
     {"selector":".urgency-grid .urgency-card:nth-child(1) small","es":"Agendado según disponibilidad","en":"Scheduled based on availability"},
     {"selector":".urgency-grid .urgency-card:nth-child(2) strong","es":"Rápida ⚡","en":"Rush ⚡"},
-    {"selector":".urgency-grid .urgency-card:nth-child(2) small","es":"+25% · prioridad esta semana","en":"+25% · priority this week"},
+    {"selector":".urgency-grid .urgency-card:nth-child(2) small","es":"Prioridad esta semana","en":"Priority this week"},
     {"selector":".summary-eyebrow","es":"Tu estimado","en":"Your estimate"},
-    {"selector":".summary-note","es":"Estimado referencial. El precio final se confirma tras una charla de 15 minutos.","en":"Reference estimate. The final price is confirmed after a 15-minute chat."},
+    {"selector":".summary-note","es":"Estimado referencial. Te enviamos la cotización exacta tras una charla de 15 minutos.","en":"Reference estimate. We send you the exact quote after a 15-minute chat."},
     {"selector":".estimator-summary .summary-cta","es":"Solicitar cotización exacta","en":"Request an exact quote"},
     {"selector":"#servicios .section-head h2","es":"En qué puedo ayudarte","en":"How I can help you"},
     {"selector":"#servicios .section-head p","es":"Tres formas de trabajar juntos, según en qué punto esté tu proyecto.","en":"Three ways to work together depending on where your project is right now."},
@@ -336,30 +336,27 @@ applyLanguage(getInitialLanguage(), false);
    ============================================================ */
 const ESTIMATOR_CATALOG = {
   types: {
-    landing: { es: 'Landing Page', en: 'Landing Page', price: 350, days: 5 },
-    sitio: { es: 'Sitio Web Completo', en: 'Full Website', price: 650, days: 10 },
-    app: { es: 'App Web a la Medida', en: 'Custom Web App', price: 1200, days: 20 },
-    mantenimiento: { es: 'Mantenimiento / Arreglo', en: 'Maintenance / Fixes', price: 150, days: 3 },
+    landing: { es: 'Landing Page', en: 'Landing Page', days: 5 },
+    sitio: { es: 'Sitio Web Completo', en: 'Full Website', days: 10 },
+    app: { es: 'App Web a la Medida', en: 'Custom Web App', days: 20 },
+    mantenimiento: { es: 'Mantenimiento / Arreglo', en: 'Maintenance / Fixes', days: 3 },
   },
   extras: {
-    bilingue: { es: 'Sitio bilingüe (ES/EN)', en: 'Bilingual site (ES/EN)', price: 200, days: 3 },
-    seo: { es: 'SEO básico', en: 'Basic SEO', price: 150, days: 2 },
-    ecommerce: { es: 'Tienda en línea', en: 'Online store', price: 400, days: 5 },
-    reservas: { es: 'Reservas en línea', en: 'Online bookings', price: 300, days: 4 },
+    bilingue: { es: 'Sitio bilingüe (ES/EN)', en: 'Bilingual site (ES/EN)', days: 3 },
+    seo: { es: 'SEO básico', en: 'Basic SEO', days: 2 },
+    ecommerce: { es: 'Tienda en línea', en: 'Online store', days: 5 },
+    reservas: { es: 'Reservas en línea', en: 'Online bookings', days: 4 },
   },
   urgency: {
-    normal: { es: 'Normal', en: 'Standard', multiplier: 1, speedFactor: 1 },
-    rapida: { es: 'Rápida ⚡', en: 'Rush ⚡', multiplier: 1.25, speedFactor: 0.75 },
+    normal: { es: 'Normal', en: 'Standard', speedFactor: 1 },
+    rapida: { es: 'Rápida ⚡', en: 'Rush ⚡', speedFactor: 0.75 },
   },
   ui: {
     businessDaysEs: 'días hábiles',
     businessDaysEn: 'business days',
     approx: '≈',
-    rangeSeparator: ' – ',
   },
 };
-
-const formatMoney = (amount) => '$' + Math.round(amount).toLocaleString('en-US');
 
 const computeEstimate = () => {
   const typeInput = document.querySelector('input[name="est-type"]:checked');
@@ -368,7 +365,6 @@ const computeEstimate = () => {
   }
 
   const base = ESTIMATOR_CATALOG.types[typeInput.value];
-  let price = base.price;
   let days = base.days;
   const breakdown = [{ key: typeInput.value, item: base }];
 
@@ -377,7 +373,6 @@ const computeEstimate = () => {
     if (!extra) {
       return;
     }
-    price += extra.price;
     days += extra.days;
     breakdown.push({ key: extraInput.value, item: extra });
   });
@@ -385,18 +380,16 @@ const computeEstimate = () => {
   const urgencyInput = document.querySelector('input[name="est-urgency"]:checked');
   const urgency = urgencyInput ? ESTIMATOR_CATALOG.urgency[urgencyInput.value] : ESTIMATOR_CATALOG.urgency.normal;
 
-  price *= urgency.multiplier;
   days = Math.max(2, Math.ceil(days * urgency.speedFactor));
 
-  return { price, days, breakdown, urgency };
+  return { days, breakdown, urgency };
 };
 
 const renderEstimator = () => {
-  const priceEl = document.getElementById('est-price');
   const daysEl = document.getElementById('est-days');
   const breakdownEl = document.getElementById('est-breakdown');
   const ctaEl = document.getElementById('est-cta');
-  if (!priceEl || !daysEl || !breakdownEl) {
+  if (!daysEl || !breakdownEl) {
     return;
   }
 
@@ -406,17 +399,14 @@ const renderEstimator = () => {
   }
 
   const lang = currentLanguage;
-  const low = result.price * 0.95;
-  const high = result.price * 1.2;
   const businessDays = lang === 'en' ? ESTIMATOR_CATALOG.ui.businessDaysEn : ESTIMATOR_CATALOG.ui.businessDaysEs;
 
-  priceEl.textContent = formatMoney(low) + ESTIMATOR_CATALOG.ui.rangeSeparator + formatMoney(high);
-  daysEl.textContent = ESTIMATOR_CATALOG.ui.approx + ' ' + result.days + ' ' + businessDays;
+  daysEl.textContent = '⏱ ' + ESTIMATOR_CATALOG.ui.approx + ' ' + result.days + ' ' + businessDays;
 
   breakdownEl.innerHTML = '';
   result.breakdown.forEach(({ item }) => {
     const li = document.createElement('li');
-    li.textContent = item[lang] + ' · ' + formatMoney(item.price) + ' · +' + item.days + ' d';
+    li.textContent = item[lang] + ' · +' + item.days + ' d';
     breakdownEl.appendChild(li);
   });
 
@@ -425,15 +415,15 @@ const renderEstimator = () => {
       (lang === 'en' ? 'Hi BuildBeeTech! From your estimator: ' : '¡Hola BuildBeeTech! Desde tu cotizador: ')
       + result.breakdown.map(({ item }) => item[lang]).join(' + ')
       + (lang === 'en'
-        ? ' (Rush: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'yes' : 'no') + '). Estimated ' + formatMoney(result.price) + '. I would like an exact quote.'
-        : ' (Urgencia rápida: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'sí' : 'no') + '). Estimado: ' + formatMoney(result.price) + '. Quiero una cotización exacta.')
+        ? ' (Rush: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'yes' : 'no') + '). Estimated delivery: ' + result.days + ' days. I would like an exact quote.'
+        : ' (Urgencia rápida: ' + (result.urgency === ESTIMATOR_CATALOG.urgency.rapida ? 'sí' : 'no') + '). Entrega estimada: ' + result.days + ' días. Quiero una cotización exacta.')
     );
     ctaEl.href = 'mailto:buildbeetech@gmail.com?subject=' + encodeURIComponent(lang === 'en' ? 'Project quote request' : 'Solicitud de cotización') + '&body=' + summaryText;
   }
 
-  priceEl.classList.remove('is-updated');
-  void priceEl.offsetWidth; // reinicia la animación
-  priceEl.classList.add('is-updated');
+  daysEl.classList.remove('is-updated');
+  void daysEl.offsetWidth; // reinicia la animación
+  daysEl.classList.add('is-updated');
 };
 
 window.refreshEstimator = renderEstimator;
